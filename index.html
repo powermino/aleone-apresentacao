@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALEONE – Apresentação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: elegante, sóbrio, institucional – como o folder impresso
+   IDEA: o próprio folder da ALEONE virando apresentação de tela cheia
+   PICTURE: fotos do folder em arcos e pílulas, post Home Equity inteiro
+   COLOUR and TYPE: preto sólido + dourado (marca), Lora + Poppins
+   LAYOUT: seções em tela cheia, navegação por pontos e setas */
+:root{--bg:#0a0a0a;--bg2:#121211;--gold:#d2ad66;--gold2:#b48a43;--ink:#efe9de;--mute:#b5ad9f;--line:rgba(210,173,102,.28);color-scheme:dark}
+*{box-sizing:border-box;min-width:0;margin:0;padding:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 'Poppins',system-ui,sans-serif;overflow-x:clip}
+img{display:block;max-width:100%}
+a{color:inherit}
+.slide{background:var(--bg) url(assets/bg.jpg) center/cover no-repeat;min-height:100vh;min-height:100svh;scroll-snap-align:start;display:flex;align-items:center;padding:clamp(28px,5vw,72px) max(6vw,20px);border-bottom:1px solid rgba(255,255,255,.04);position:relative}
+.wrap{width:100%;max-width:1200px;margin:0 auto;display:grid;gap:clamp(28px,5vw,72px);grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center}
+.kick{display:flex;align-items:center;gap:14px;color:var(--gold);font-size:13px;font-weight:500;margin-bottom:18px}
+.kick::before{content:"";width:34px;height:1px;background:var(--gold)}
+h1,h2{font-family:'Lora',serif;font-weight:400;line-height:1.08;text-wrap:balance}
+h1{font-size:clamp(40px,6vw,72px);color:var(--gold)}
+h2{font-size:clamp(32px,4.2vw,50px)}
+h2 .s{display:block;font-family:'Poppins',sans-serif;font-weight:700;font-size:.62em;color:var(--ink);margin-bottom:6px;letter-spacing:.01em}
+h2 em{color:var(--gold);font-style:italic}
+.lead{color:var(--mute);font-size:17px;max-width:56ch;margin-top:18px}
+.gold{color:var(--gold)}
+.arch{border-radius:999px 999px 18px 18px;overflow:hidden;background:#1a1a19}
+.pill{border-radius:999px;overflow:hidden;background:#1a1a19}
+.round{border-radius:50%;overflow:hidden;aspect-ratio:1}
+.arch img,.pill img,.round img{width:100%;height:100%;object-fit:cover}
+.slide:nth-of-type(even){background-image:url(assets/bg2.jpg)}
+/* capa */
+.cover .logo{width:min(220px,50vw)}
+.tag{display:flex;align-items:center;gap:12px;color:var(--gold);font-size:12px;letter-spacing:.2em;margin-top:10px}
+.tag::before,.tag::after{content:"";width:28px;height:1px;background:var(--gold)}
+.cover .arch{aspect-ratio:4/5;max-height:72vh;width:100%}
+/* listas */
+.list{margin-top:26px;display:grid;gap:0}
+.list .it{display:grid;grid-template-columns:44px minmax(0,1fr);padding:16px 0;border-top:1px solid var(--line)}
+.list .n{font-family:'Lora',serif;color:var(--gold);font-size:18px}
+.list b{display:block;color:var(--gold);font-weight:600;font-size:15px}
+.list span{color:var(--mute);font-size:15px}
+.bars{margin-top:26px;display:grid;gap:16px}
+.bars .it{border-left:2px solid var(--gold);padding-left:16px}
+.bars b{display:block;color:var(--gold);font-weight:600;font-size:15px}
+.bars span{color:var(--mute);font-size:15px}
+.tl{margin-top:26px;position:relative;padding-left:30px;display:grid;gap:18px}
+.tl::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:1px;background:var(--gold2)}
+.tl .it{position:relative}
+.tl .it::before{content:"";position:absolute;left:-30px;top:5px;width:15px;height:15px;border-radius:50%;background:var(--gold)}
+.tl b{display:block;color:var(--gold);font-weight:600;font-size:15px}
+.tl span{color:var(--mute);font-size:15px}
+.note{color:#8d8578;font-size:13px;margin-top:18px}
+/* mosaicos */
+.mosaic{display:grid;gap:14px}
+.m-credit{grid-template-columns:1fr 1fr}
+.m-credit .pill:first-child{grid-column:1/-1;aspect-ratio:2.4}
+.m-credit .pill{aspect-ratio:1.4}
+.m-team{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.m-team .arch{aspect-ratio:.62}
+.m-lic{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;align-items:end}
+.m-lic .arch{aspect-ratio:.72}
+/* home equity */
+.he .post{border-radius:18px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px var(--line)}
+.rate{display:flex;align-items:flex-end;gap:16px;margin-top:24px;padding:18px 0;border-block:1px solid var(--line);flex-wrap:wrap}
+.rate small{color:var(--gold);font-size:13px;line-height:1.4}
+.rate strong{font-family:'Lora',serif;font-style:italic;font-weight:500;color:var(--gold);font-size:clamp(48px,7vw,76px);line-height:.9;white-space:nowrap}
+.rate em{font-style:normal;color:var(--ink);padding-bottom:6px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+/* contato */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{font-size:17px;font-weight:600}
+.card p{font-weight:600;font-size:18px;margin-top:4px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:999px;background:var(--gold);color:#0a0a0a;font-weight:600;font-size:15px;text-decoration:none;margin-top:16px;transition:background .2s}
+.btn:hover{background:#e2c27f}
+.btn:focus-visible,.dots button:focus-visible,.nav button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+.qr{background:#fff;padding:10px;border-radius:14px;width:140px}
+.addr{color:var(--mute);font-size:15px;margin-top:22px}
+footer{color:var(--mute);font-size:12px;letter-spacing:.2em;text-align:center;padding:26px 0 34px;scroll-snap-align:end}
+/* navegação */
+.dots{position:fixed;right:18px;top:50%;transform:translateY(-50%);display:grid;gap:12px;z-index:5}
+.dots button{width:12px;height:12px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0}
+.dots button.on{background:var(--gold)}
+.nav{position:fixed;right:14px;bottom:16px;display:flex;gap:8px;z-index:5}
+.nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(10,10,10,.85);color:var(--gold);font-size:18px;cursor:pointer}
+.fade{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.fade{opacity:1;transform:none;transition:none}}
+@media(max-width:860px){
+  html{scroll-snap-type:none}
+  .wrap{grid-template-columns:minmax(0,1fr)}
+  .slide{min-height:auto;padding-block:56px}
+  .cover{min-height:100svh}
+  .cover .arch{aspect-ratio:16/11;max-height:none}
+  .rev .media{order:-1}
+  .dots{display:none}
+  .cards,.cols{grid-template-columns:minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<section class="slide cover" id="inicio">
+  <div class="wrap">
+    <div class="fade">
+      <img class="logo" src="assets/logo.png" alt="ALEONE">
+      <div class="tag">GESTÃO • SOLUÇÕES • CONFIANÇA</div>
+      <div class="kick" style="margin-top:40px">Apresentação institucional</div>
+      <h1>Soluções inteligentes<span style="color:var(--ink)">.</span></h1>
+      <p class="lead">Crédito, financiamento, home equity, consórcios e assessoria em licitações para pessoas e empresas.</p>
+      <a class="btn" href="#contato">Fale com a ALEONE</a>
+    </div>
+    <div class="arch fade media"><img src="assets/cidade.jpg" alt="Curitiba à noite" style="object-position:50% 40%"></div>
+  </div>
+</section>
+
+<section class="slide" id="solucoes">
+  <div class="wrap">
+    <div class="m-team fade media">
+      <div class="arch"><img src="assets/p-marlon.jpg" alt="Marlon Alves"></div>
+      <div class="arch"><img src="assets/p-wagner.jpg" alt="Wagner Cordeiro" style="object-position:50% 30%"></div>
+      <div class="arch"><img src="assets/p-predio.jpg" alt="" style="object-position:70% 50%"></div>
+    </div>
+    <div class="fade">
+      <div class="kick">Soluções integradas</div>
+      <h2><span class="s">MÚLTIPLAS SOLUÇÕES.</span><em>Um único propósito:</em> o seu crescimento.</h2>
+      <p class="lead">A ALEONE reúne soluções comerciais e empresariais para apoiar projetos, conquistas e oportunidades.</p>
+      <div class="list">
+        <a class="it" href="#credito" style="text-decoration:none"><div class="n">01</div><div><b>Crédito e financiamento</b><span>Alternativas para projetos pessoais e empresariais.</span></div></a>
+        <a class="it" href="#home-equity" style="text-decoration:none"><div class="n">02</div><div><b>Home Equity</b><span>Crédito com garantia de imóvel, a partir de 1,09% a.m.*</span></div></a>
+        <a class="it" href="#consorcios" style="text-decoration:none"><div class="n">03</div><div><b>Consórcios e cartas contempladas</b><span>Aquisição planejada de bens e oportunidades.</span></div></a>
+        <a class="it" href="#licitacoes" style="text-decoration:none"><div class="n">04</div><div><b>Licitações e oportunidades</b><span>Orientação para vender ao mercado público.</span></div></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide rev" id="credito">
+  <div class="wrap">
+    <div class="fade">
+      <div class="kick">Crédito e financiamento</div>
+      <h2><span class="s">CRÉDITO PARA REALIZAR.</span><em>Financiamento</em> para crescer.</h2>
+      <p class="lead">Soluções financeiras para transformar planos em conquistas e impulsionar novos projetos.</p>
+      <div class="bars">
+        <div class="it"><b>Micro crédito · EPP, LTDA e MEI</b><span>Empréstimo com aval via fundo FDEPR.</span></div>
+        <div class="it"><b>Crédito empresarial</b><span>Capital de giro, empréstimos com e sem garantia real (aval).</span></div>
+        <div class="it"><b>Home Equity</b><span>Crédito com garantia de imóvel, taxas a partir de 1,09% a.m.*</span></div>
+        <div class="it"><b>Crédito imobiliário · Financiamento de veículos</b><span>Aquisição de imóveis, veículos e projetos patrimoniais.</span></div>
+      </div>
+    </div>
+    <div class="mosaic m-credit fade media">
+      <div class="pill"><img src="assets/c-mulher.jpg" alt="" style="object-position:50% 30%"></div>
+      <div class="pill"><img src="assets/c-barista.jpg" alt=""></div>
+      <div class="pill"><img src="assets/c-avental.jpg" alt="" style="object-position:50% 25%"></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide he" id="home-equity">
+  <div class="wrap">
+    <div class="post fade media"><img src="assets/post-home-equity.jpg" alt="Home Equity ALEONE – taxas a partir de 1,09% ao mês"></div>
+    <div class="fade">
+      <div class="kick">Home Equity</div>
+      <h2><span class="s">SEU IMÓVEL TRABALHANDO</span><em>a favor</em> dos seus planos.</h2>
+      <p class="lead">Crédito com garantia de imóvel. Como o imóvel fica como garantia, as taxas costumam ser menores e os prazos mais longos que nas linhas tradicionais.</p>
+      <div class="rate"><small>Taxas<br>a partir de</small><strong>1,09%</strong><em>ao mês*</em></div>
+      <div class="cols">
+        <div class="list" style="margin-top:20px">
+          <div class="it"><div class="n">1</div><div><b>Conversa inicial</b><span>Objetivo e valor.</span></div></div>
+          <div class="it"><div class="n">2</div><div><b>Avaliação e análise</b><span>Do imóvel e do crédito.</span></div></div>
+          <div class="it"><div class="n">3</div><div><b>Contratação</b><span>Com as condições aprovadas.</span></div></div>
+        </div>
+        <div class="bars" style="margin-top:22px">
+          <div class="it"><span>Capital de giro e expansão</span></div>
+          <div class="it"><span>Troca de dívidas mais caras</span></div>
+          <div class="it"><span>Reforma e novos projetos</span></div>
+          <div class="it"><span>Educação, saúde e família</span></div>
+        </div>
+      </div>
+      <p class="note">*Sujeito à análise de crédito e avaliação do imóvel. Taxas e condições variam conforme a garantia e o perfil da operação.</p>
+    </div>
+  </div>
+</section>
+
+<section class="slide rev" id="consorcios">
+  <div class="wrap">
+    <div class="fade">
+      <div class="kick">Consórcios e cartas contempladas</div>
+      <h2><span class="s">PLANEJE HOJE.</span><em>Conquiste</em> amanhã.</h2>
+      <p class="lead">Consórcios e oportunidades para aquisição planejada de bens e realização de objetivos.</p>
+      <div class="list">
+        <div class="it"><div class="n">01</div><div><b>Consórcios imobiliários</b><span>Imóveis residenciais ou comerciais.</span></div></div>
+        <div class="it"><div class="n">02</div><div><b>Consórcios de veículos</b><span>Automóveis, utilitários e outros veículos.</span></div></div>
+        <div class="it"><div class="n">03</div><div><b>Bens e equipamentos</b><span>Para necessidades pessoais ou empresariais.</span></div></div>
+        <div class="it"><div class="n">04</div><div><b>Cartas contempladas</b><span>Conforme disponibilidade, análise e regras de contratação.</span></div></div>
+      </div>
+    </div>
+    <div class="pill fade media" style="aspect-ratio:1.15;border-radius:220px"><img src="assets/consorcio.jpg" alt="Carro e máquinas em frente a galpão"></div>
+  </div>
+</section>
+
+<section class="slide" id="licitacoes">
+  <div class="wrap">
+    <div class="m-lic fade media">
+      <div class="round"><img src="assets/congresso.jpg" alt="Congresso Nacional"></div>
+      <div class="arch"><img src="assets/notebook.jpg" alt=""></div>
+    </div>
+    <div class="fade">
+      <div class="kick">Licitações e oportunidades</div>
+      <h2><span class="s">SUA EMPRESA VENDENDO PARA O ESTADO.</span><em>Novos</em> horizontes.</h2>
+      <p class="lead">Consultoria para empresas que desejam explorar oportunidades de negócios por meio de licitações públicas.</p>
+      <div class="tl">
+        <div class="it"><b>Assessoria em licitações</b><span>Orientação especializada em cada etapa do processo.</span></div>
+        <div class="it"><b>Análise de editais</b><span>Exigências, condições e oportunidades de cada edital.</span></div>
+        <div class="it"><b>Preparação documental</b><span>Organização dos documentos para participação.</span></div>
+        <div class="it"><b>Acompanhamento</b><span>Suporte consultivo durante os procedimentos.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" id="contato">
+  <div class="wrap">
+    <div class="fade">
+      <div class="kick">Contato</div>
+      <h2><span class="s">SEUS OBJETIVOS MERECEM</span><em>as soluções</em> certas.</h2>
+      <p class="lead">Fale com nosso atendimento comercial.</p>
+      <div class="cards">
+        <div class="card"><h3>Marlon Alves</h3><p>(41) 98806-1834</p><p>(41) 3501-4092</p><a class="btn" href="https://wa.me/5541988061834" target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+        <div class="card"><h3>Wagner Cordeiro</h3><p>(41) 99722-2118</p><p>(41) 9920-3699</p><a class="btn" href="https://wa.me/5541997222118" target="_blank" rel="noopener">Chamar no WhatsApp</a></div>
+      </div>
+      <p class="addr">Rua João Bettega, 367 · SLA · Portão · Curitiba/PR<br><a class="gold" href="https://instagram.com/aleonecreditoeasslicitacao" target="_blank" rel="noopener">@aleonecreditoeasslicitacao</a></p>
+    </div>
+    <div class="fade media" style="display:flex;flex-direction:column;align-items:center;gap:22px;text-align:center">
+      <img src="assets/logo.png" alt="ALEONE" style="width:min(260px,60vw)">
+      <div class="tag">GESTÃO • SOLUÇÕES • CONFIANÇA</div>
+      <img class="qr" src="assets/qr.png" alt="QR code ALEONE">
+      <div class="gold" style="font-size:13px;letter-spacing:.2em">ESCANEIE O QR CODE</div>
+    </div>
+  </div>
+</section>
+<footer>ALEONE / GESTÃO • SOLUÇÕES • CONFIANÇA</footer>
+
+<nav class="dots" aria-label="Seções"></nav>
+<div class="nav"><button id="prev" aria-label="Anterior">↑</button><button id="next" aria-label="Próxima">↓</button></div>
+
+<script>
+{
+  const slides=[...document.querySelectorAll('.slide')];
+  const dots=document.querySelector('.dots');
+  dots.innerHTML=slides.map((s,i)=>`<button aria-label="Seção ${i+1}" data-i="${i}"></button>`).join('');
+  const dbs=[...dots.children];
+  let cur=0;
+  const go=i=>{i=Math.max(0,Math.min(slides.length-1,i));slides[i].scrollIntoView({behavior:'smooth'});};
+  dbs.forEach(b=>b.addEventListener('click',()=>go(+b.dataset.i)));
+  document.getElementById('prev').addEventListener('click',()=>go(cur-1));
+  document.getElementById('next').addEventListener('click',()=>go(cur+1));
+  document.addEventListener('keydown',e=>{
+    if(['ArrowDown','PageDown','ArrowRight'].includes(e.key)){e.preventDefault();go(cur+1)}
+    if(['ArrowUp','PageUp','ArrowLeft'].includes(e.key)){e.preventDefault();go(cur-1)}
+  });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){cur=slides.indexOf(e.target);dbs.forEach((b,j)=>b.classList.toggle('on',j===cur));}
+  }),{threshold:.55});
+  slides.forEach(s=>io.observe(s));
+  const fio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');fio.unobserve(e.target)}}),{threshold:.15});
+  document.querySelectorAll('.fade').forEach(el=>fio.observe(el));
+}
+</script>
+</body>
+</html>
